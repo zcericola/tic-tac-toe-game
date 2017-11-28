@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: row;    
+    margin: 2em 39%;
+}
+
+
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black; 
+   
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+#infoBar {
+    display: block;    
+    text-align: center;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    
+}
