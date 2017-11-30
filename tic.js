@@ -43,7 +43,7 @@ function turn(){
     
 }
 
-function checkWin(arr){
+function checkWin(playerArr){
     //check contents of the boxes
     //if there are three of the same letters in a row, declare a winner
     const  winningNums = [
@@ -54,27 +54,58 @@ function checkWin(arr){
         [4,5,6],
         [7,8,9], 
         [1,5,9],
-        [3,5,7]
+        [3,5,7]        
     ];
 
-//loops over the player array
-for(var i = 0; i <= arr.length; i ++){
-    //loops over each winning number array
-    for(var j = 0; j <= winningNums[i].length; j++){
-    //checks that a player has made at least three turns
-    if(arr.length < 3 || arr.includes(winningNums[i] <= -1)){
-        return;
-    }
-    //if the player array is equal to an array inside winningNums, alert the game has been won and reset           
-    if(arr[i] === winningNums[i][j]){
-       alert('Player has won');
-       resetGame();
-        }
-    } 
+    
+
+//loops over the win array
+for(var i = 0; i < winningNums.length; i ++){  
+    //console.log(winningNums[i]);  
+    compareArrs(playerArr, winningNums[i]);
+    
 
     }    
 
+};
+
+
+function compareArrs(playerArr, winningArr){
+    let sortedArr = playerArr.sort(function(a,b){return a - b;});
+    let counter = 0;
+    
+    
+    for(var j = 0; j < sortedArr.length; j++){        
+        console.log(sortedArr);
+        console.log(winningArr[j]);
+         
+        //checks that a player has made at least three turns
+        if (sortedArr.length < 3){
+            return;
+        }
+
+        //if the player array value is equal to winning num value, increment counter
+        
+        if (sortedArr[j] == winningArr[j] && sortedArr[j].includes(winningArr[j], -1)) {                 
+            counter ++;             
+            console.log('Count is at ' + counter);
+        }      
+        
+        if(counter >= 3){
+            alert('You won.');
+            resetGame();
+        }       
+        
+        
+    }
+
+       
+      
+
+        
 }
+
+
 
 //reloads the page for another game
 function resetGame(){    
