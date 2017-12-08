@@ -1,20 +1,25 @@
 body {
-    background-color: rgb(160, 160, 160);
+    background-color:#ced6e3;
+    font-size: 2em;
+    color: #232323;
 }
 
 .container {
     display: flex;
     flex-direction: row;    
-    margin: 2em 39%;
+    margin: 2em 35%;
 }
 
 
 
 .box {
-    height: 100px;
-    width: 100px;
-    border: 2px solid black; 
-   
+    height: 125px;
+    width: 125px;
+    border: 2px solid #3f3f3f; 
+    text-align: center;
+    margin: inherit;
+    vertical-align: middle;
+    line-height: 125px;
     
 }
 
@@ -29,4 +34,19 @@ h1 {
     height: auto;
     margin: 0 auto;
     
+}
+
+.reset {
+    display: block;
+    background-color: #3f3f3f;
+    color: white;
+    height: 60px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 2em auto;
+
+}
+
+.winner {
+    color: rgb(32, 85, 32);     
 }
